@@ -116,22 +116,46 @@
             </div>
           </div>
         </div>
+
+        <!-- modal -->
+
+        <dialog id="category-model" class="modal">
+          <div class="modal-box">
+            <div id="modal-container" class="space-y-4"></div>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
       </section>
 
-      <!-- modal -->
-      <!-- Open the modal using ID.showModal() method -->
-      <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
-      <dialog id="category-model" class="modal">
-        <div class="modal-box">
-          <div id="modal-container" class="space-y-4"></div>
-          <div class="modal-action">
-            <form method="dialog">
-              <!-- if there is a button in form, it will close the modal -->
-              <button class="btn">Close</button>
-            </form>
+      <!-- About the campaign section -->
+      <section class="mt-[100px] max-w-[1145px] mx-auto">
+        <h1 class="text-3xl font-bold mb-[40px] text-center">
+          About the Campaign
+        </h1>
+        <div class="flex gap-7 items-center">
+          <img src="./assets/about.png" alt="" class="w-full h-auto" />
+
+          <div>
+            <p class="text-gray-500 mb-5">
+              Green Earth is a global tree plantation initiative dedicated to
+              fighting climate change. Since our start, we’ve planted over
+              500,000 trees worldwide. By joining our campaign, you help restore
+              forests, create habitats for wildlife, and combat global warming.
+            </p>
+
+            <ul class="text-gray-500 list-disc pl-5">
+              <li>Restoration of natural habitats</li>
+              <li>Improvement of air quality</li>
+              <li>Support for local communities</li>
+            </ul>
           </div>
         </div>
-      </dialog>
+      </section>
     </main>
 
     <footer></footer>
