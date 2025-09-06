@@ -14,12 +14,11 @@
     <!-- font awesome cdn -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/brands.min.css"
-      integrity="sha512-WxpJXPm/Is1a/dzEdhdaoajpgizHQimaLGL/QqUIAjIihlQqlPQb1V9vkGs9+VzXD7rgI6O+UsSKl4u5K36Ydw=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
     <!-- css -->
     <link rel="stylesheet" href="style.css" />
 
@@ -83,13 +82,15 @@
       </section>
     </header>
 
-    <main class="mt-[100px] bg-[#F0FDF4] p-[120px]">
+    <main class="bg-[#F0FDF4] p-[50px]">
       <!-- chose your tree section -->
-      <section>
-        <h1 class="text-center text-xl">choose your trees</h1>
+      <section class="mt-[100px]">
+        <h1 class="text-center text-2xl font-semibold mb-8">
+          choose your trees
+        </h1>
         <div class="grid grid-cols-12 gap-4 p-4">
           <!-- left sidebar -->
-          <div class="col-span-2 p-4 border">
+          <div class="col-span-2 p-4">
             <h1 class="text-xl font-bold mb-6">Categories</h1>
 
             <div id="category-container" class="p-1 space-y-4"></div>
@@ -97,17 +98,22 @@
 
           <!-- main content -->
 
-          <div
-            id="card-container"
-            class="col-span-8 grid grid-cols-3 gap-4 border"
-          >
+          <div id="card-container" class="col-span-8 grid grid-cols-3 gap-4">
             <!-- card -->
           </div>
 
           <!-- right sidebar -->
 
-          <div class="col-span-2 p-4 border">
-            <h1>right</h1>
+          <div class="col-span-2 p-4 bg-white space-y-3">
+            <h1 class="text-xl font-bold">Your Cart</h1>
+            <div id="cartCard-container" class="space-y-2">
+              <!-- cart cards -->
+            </div>
+
+            <div class="flex justify-between items-center">
+              <h2>Total:</h2>
+              <p>৳<span id="total-amount">0</span></p>
+            </div>
           </div>
         </div>
       </section>
