@@ -1,0 +1,12 @@
+* {
+  font-family: "Inter", sans-serif;
+}
+
+.styled-btn {
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s;
+  background-color: #15803d;
+  padding: 0.5rem;
+  color: white;
+}

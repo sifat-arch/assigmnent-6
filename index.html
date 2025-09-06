@@ -3,9 +3,118 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- daisy UI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/brands.min.css"
+      integrity="sha512-WxpJXPm/Is1a/dzEdhdaoajpgizHQimaLGL/QqUIAjIihlQqlPQb1V9vkGs9+VzXD7rgI6O+UsSKl4u5K36Ydw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- google font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Document</title>
   </head>
-  <body>
-    <h1>Sifat</h1>
+  <body class="max-w-[1920px] mx-auto">
+    <header>
+      <!-- navbar section -->
+      <div
+        class="navbar bg-[#15803D] shadow-sm flex justify-between px-[100px] py-[24px]"
+      >
+        <div class="">
+          <a class="text-xl text-white">green Earth</a>
+        </div>
+        <div>
+          <ul class="flex gap-5">
+            <li class="text-white cursor-pointer">About</li>
+            <li class="text-white cursor-pointer">Gallery</li>
+            <li class="text-white cursor-pointer">Plant a Tree</li>
+          </ul>
+        </div>
+        <div class="flex-none">
+          <button
+            class="btn px-7 border-none py-6 rounded-full text-[16px] bg-[#FACC15] text-[#15803D]"
+          >
+            Plant a Tree
+          </button>
+        </div>
+      </div>
+
+      <!-- banner section -->
+      <section class="bg-[#cff0dc] flex justify-between items-center">
+        <div><img src="./assets/hero-leaf1.png" alt="" /></div>
+
+        <div class="text-center space-y-3">
+          <h2 class="text-4xl font-bold">Plant a Tree, Grow a Future</h2>
+          <p class="text-gray-600">
+            Join our mission to plant 1 million trees and make the Earth greener
+            for future generations.
+          </p>
+
+          <button
+            class="btn px-7 border-none py-6 rounded-full text-[16px] bg-[#FACC15] text-[#15803D]"
+          >
+            Get Involved
+          </button>
+        </div>
+
+        <div>
+          <img src="./assets//hero-leaf2.png" alt="" />
+        </div>
+      </section>
+    </header>
+
+    <main class="mt-[100px] bg-[#F0FDF4] p-[120px]">
+      <!-- chose your tree section -->
+      <section>
+        <h1 class="text-center text-xl">choose your trees</h1>
+        <div class="grid grid-cols-12 gap-4 p-4">
+          <!-- left sidebar -->
+          <div class="col-span-2 p-4 border">
+            <h1 class="text-xl font-bold mb-6">Categories</h1>
+
+            <div id="category-container" class="p-1 space-y-4"></div>
+          </div>
+
+          <!-- main content -->
+
+          <div
+            id="card-container"
+            class="col-span-8 grid grid-cols-3 gap-4 border"
+          >
+            <!-- card -->
+          </div>
+
+          <!-- right sidebar -->
+
+          <div class="col-span-2 p-4 border">
+            <h1>right</h1>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="./scripts/script.js"></script>
   </body>
 </html>
