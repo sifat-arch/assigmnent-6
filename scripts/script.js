@@ -2,6 +2,8 @@ const categoryContainer = document.getElementById("category-container");
 const cardContainer = document.getElementById("card-container");
 const cartCardContainer = document.getElementById("cartCard-container");
 const totalAmount = document.getElementById("total-amount");
+const modelContainer = document.getElementById("modal-container");
+const liForClick = document.getElementById("category-model");
 
 const loadCategories = () => {
   fetch("https://openapi.programming-hero.com/api/categories")
@@ -38,25 +40,27 @@ const loadCardCategories = (id) => {
     .then((res) => res.json())
     .then((data) => showCardCategories(data))
     .catch((err) => console.log(err));
+  showLoading();
 };
 
 const loadAllCards = () => {
   fetch("https://openapi.programming-hero.com/api/plants")
     .then((res) => res.json())
     .then((data) => showCardCategories(data));
+  showLoading();
 };
 
 const showCardCategories = (data) => {
   cardContainer.innerHTML = "";
   data.plants.forEach((item) => {
     cardContainer.innerHTML += `
-          <div id="${item.id}" class="bg-white p-4">
+          <div id="${item.id}" class="bg-white p-4 rounded-md shadow-lg">
               <div>
-                <img src="${item.image}" alt="" class="h-48 w-full object-cover rounded-md"/>
+                <img src="${item.image}" alt="" class="h-60 w-full object-cover rounded-md"/>
               </div>
 
               <div class="space-y-3 mt-3">
-                <h2 class="text-lg font-bold">${item.name}</h2>
+                <h2 class="text-lg font-bold title cursor-pointer">${item.name}</h2>
                 <p class="text-gray-500">
                    ${item.description}
                 </p>
@@ -85,6 +89,10 @@ let cartArr = [];
 cardContainer.addEventListener("click", (e) => {
   if (e.target.innerText === "Add to Cart") {
     findCardInfo(e);
+  }
+
+  if (e.target.classList.contains("title")) {
+    loadModals(e);
   }
 });
 
@@ -133,6 +141,50 @@ const deleteCart = (id) => {
   const filterDelete = cartArr.filter((item) => item.id !== id);
   cartArr = filterDelete;
   showCartCards(cartArr);
+};
+
+loadModals = (e) => {
+  const id = e.target.parentNode.parentNode.id;
+  fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      showModel(data.plants);
+    });
+};
+
+const showModel = (data) => {
+  modelContainer.innerHTML = `
+
+            <h2 class="text-3xl font-bold">${data.name}</h2>
+
+            <div>
+              <img
+                src=${data.image}
+                alt=""
+                class="h-48 w-full object-cover rounded-md"
+              />
+            </div>
+
+            <p><span class="font-bold">Category</span> : ${data.category}</p>
+
+            <p><span class="font-bold">price</span> : ${data.price}</p>
+
+            <p>
+              <span class="font-bold">Description: </span>
+                ${data.description}
+            </p>
+
+         `;
+
+  liForClick.showModal();
+};
+
+const showLoading = () => {
+  cardContainer.innerHTML = `
+         <div class="col-span-8 flex items-center justify-center min-h-[300px]">
+            <span class="loading loading-spinner loading-xl"></span>
+        </div>
+    `;
 };
 
 loadAllCards();
