@@ -103,6 +103,8 @@ const findCardInfo = (e) => {
   );
   const id = e.target.parentNode.parentNode.id;
 
+  alert(`${title} is added to cart...`);
+
   cartArr.push({
     title: title,
     price: price,
