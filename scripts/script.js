@@ -187,5 +187,5 @@ const showLoading = () => {
     `;
 };
 
-//loadAllCards();
+loadAllCards();
 loadCategories();
